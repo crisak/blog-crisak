@@ -6,12 +6,11 @@ import { functionAsync } from "../../../../common/services/functionAsync";
 const code = `
 const debounce = function (fnCallback: Function, timeout = 1000) {
   let timeoutRef: NonNullable<NodeJS.Timeout>;
-  return function () {
+  return function (...argumentsData: any[]) {
     if (timeoutRef) {
       clearTimeout(timeoutRef);
     }
 
-    const argumentsData = arguments;
     const context = this;
 
     timeoutRef = setTimeout(() => {
@@ -46,10 +45,7 @@ export const Debounce = () => {
     setValueSearch(response);
   };
 
-  const debounceFindValueApi = (valueRef: any) => {
-    const debounceFn = debounce(findValueApi, 5000);
-    debounceFn(valueRef as any);
-  };
+  const debounceFindValue = debounce(findValueApi, 5000);
 
   return (
     <Container className="p-5">
@@ -63,10 +59,10 @@ export const Debounce = () => {
         <Form.Control
           type="email"
           placeholder="Enter email"
-          onChange={debounceFindValueApi}
+          onChange={debounceFindValue}
         />
         <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
+          Look for the value each 1 second.
         </Form.Text>
       </Form.Group>
 
