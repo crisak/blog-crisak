@@ -14,6 +14,7 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.1",
     "react-dom": "^17.0.2",
+    "react-router-bootstrap": "^0.26.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-bootstrap": "^0.24.5",
     "@types/styled-components": "^5.1.20",
     "prettier": "2.5.1"
   }
