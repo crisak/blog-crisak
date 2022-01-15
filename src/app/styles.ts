@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BodyContainer = styled.body`
+export const BodyContainer = styled.div`
   height: 100vh;
   background-color: #ececec;
 `;
