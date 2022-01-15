@@ -1,16 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
-import { Navbar } from "./common/components/navbar/Navbar";
-import { Router } from "./router";
+import { Navbar } from "../common/components/navbar/Navbar";
+import { Router } from "./Router";
+import { BodyContainer } from "./styles";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <BodyContainer>
         <Navbar />
         <main>
           <Router />
         </main>
-      </div>
+      </BodyContainer>
     </BrowserRouter>
   );
 }
