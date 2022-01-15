@@ -5,15 +5,19 @@ export const PageTrickContainer = styled.div`
   width: 100%;
 
   & > div {
-    border: 1px solid red;
     background-color: white;
-    width: 300px;
+    min-width: 200px;
+    max-width: 200px;
+    width: 200px;
     height: calc(100vh - ${heightNavbar});
     overflow-y: auto;
+    padding-top: 2rem;
+    box-shadow: 5px 0px 20px 0px #00000024;
   }
 
   main {
     width: 100%;
-    border: 1px solid blue;
+    height: calc(100vh - ${heightNavbar});
+    overflow-y: auto;
   }
 `;

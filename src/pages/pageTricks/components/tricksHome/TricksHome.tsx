@@ -1,3 +1,9 @@
+import { Container } from "react-bootstrap";
+
 export const TricksHome = () => {
-  return <p>TricksHome</p>;
+  return (
+    <Container>
+      <h2>Home contents</h2>
+    </Container>
+  );
 };
