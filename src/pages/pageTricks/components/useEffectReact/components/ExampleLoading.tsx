@@ -1,24 +1,14 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Card } from "./Card";
 
 export const ExampleLoading = () => {
-  const [text, setText] = useState("");
-  const inputRef = useRef<HTMLInputElement>(null);
   const [showCard, setShowCard] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
-  const handleChange = (e: any) => {
-    const value = e.target.value;
-    setText(value);
-  };
-
-  const handleClick = () => {
-    if (!inputRef?.current) {
-      return;
-    }
-
-    inputRef.current.focus();
-  };
+  useEffect(() => {
+    console.log("⛳️ active->", sectionRef);
+  });
 
   return (
     <>
@@ -28,7 +18,23 @@ export const ExampleLoading = () => {
       <Button onClick={() => setShowCard(!showCard)}>
         {showCard ? "No show" : "Show card"}
       </Button>
+
       <div className="m-4">{showCard && <Card />}</div>
+      <div className="m-4">
+        {showCard && (
+          <section
+            ref={(ref: any) => {
+              if (!ref) {
+                return;
+              }
+
+              sectionRef.current = ref;
+            }}
+          >
+            Reference element
+          </section>
+        )}
+      </div>
     </>
   );
 };
