@@ -1,10 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { PageHome, PageJsFundamentals, PageTricks } from "../pages";
-import { TricksHome, Debounce } from "../pages/pageTricks/components";
+import {
+  TricksHome,
+  Debounce,
+  UseEffectReact,
+} from "../pages/pageTricks/components";
 
 const childrenListTricks = [
   { id: 1, path: "all", element: <TricksHome /> },
   { id: 2, path: "debounce", element: <Debounce /> },
+  { id: 3, path: "use-effect", element: <UseEffectReact /> },
   { id: 3, path: "*", element: <TricksHome /> },
 ];
 

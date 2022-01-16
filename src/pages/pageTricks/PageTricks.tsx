@@ -13,11 +13,14 @@ export const PageTricks = () => {
         <LinkContainer to={`debounce`}>
           <Nav.Link>Debounce</Nav.Link>
         </LinkContainer>
+        <LinkContainer to={`use-effect`}>
+          <Nav.Link>Use effect</Nav.Link>
+        </LinkContainer>
         <Nav.Link eventKey={`disabled`} disabled>
           Disabled
         </Nav.Link>
       </Nav>
-      <main>
+      <main className="page-main-tricks">
         <Outlet />
       </main>
     </PageTrickContainer>
